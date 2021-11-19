@@ -59,6 +59,25 @@ router.delete('/:id', (req, res) =>{
         });
 });
 
-//PUT routes?
+//PUT markComplete route
+router.put('/:id', (req, res) =>{
+    console.log('req.params =', req.params);
+    const taskToMark = req.params.id;
+    const sqlText = `
+    UPDATE "todo"
+    SET "completed"=$1
+    WHERE "id"=$2;
+    `;
+    const sqlValues = [
+        'True',
+        taskToMark
+    ];
+    pool.query(sqlText, sqlValues)
+        .then((dbRes) =>{
+            res.sendStatus(200);
+        }).catch((dbError) =>{
+            res.sendStatus(500);
+        });
+});
 
 module.exports = router;

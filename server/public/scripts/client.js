@@ -7,6 +7,7 @@ function readyNow(){
     renderList();
     $('#create-button').on('click', createTask);
     $(document).on('click', '.delete-button', deleteTask);
+    $(document).on('click', '.complete-button', markComplete);
 }
 
 //GET /todolist route to render todolist
@@ -27,6 +28,7 @@ function renderList(){
                     <td>${todo.task}</td>
                     <td>${todo.completed}</td>
                     <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="complete-button" data-id="${todo.id}">Complete</button></td>
                 </tr>
             `);
         }
@@ -69,6 +71,19 @@ function deleteTask(){
     });
 }//END deleteTask
 
-//PUT route complete a task
+//PUT /todolist route to mark a task complete
+function markComplete(){
+    console.log('in markComplete');
+    const taskToMark = $(this).data('id');
+    $.ajax({
+        method: 'PUT',
+        url: `/todolist/${taskToMark}`
+    }).then((res) =>{
+        renderList();
+    }).catch((error) =>{
+        console.log('markComplete error:', error);
+    });
+}//END markComplete
 
-//PUT route importance marker
+
+//PUT /todolist route for importance marker

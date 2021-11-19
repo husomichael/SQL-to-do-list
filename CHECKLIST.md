@@ -19,7 +19,7 @@ Front end Initialization:
 
 Database planning:
 [x]Name database. 
-[]xName table/s. 
+[x]xName table/s. 
 [x]Figure out structure of column names. 
 [x]Write up SQL statements for building table. 
 [x]Write up statements to put in some dummy data.
@@ -42,15 +42,15 @@ Server setup:
 # FEATURES
 [x]Render GET ROUTE
 
-[]Create a task *POST ROUTE*
+[x]Create a task *POST ROUTE*
     store in db
     re-render DOM *GET ROUTE*
 
-[]delete a task *DELETE ROUTE*
+[x]delete a task *DELETE ROUTE*
     remove task from DB
     re-render DOM *GET ROUTE*
 
-[]task should be completeable
+[x]task should be completeable
     update task in DB *PUT ROUTE*
     should be "checked off"
     CSS to differentiate "complete" tasks
