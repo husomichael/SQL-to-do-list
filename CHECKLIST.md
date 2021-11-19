@@ -27,18 +27,17 @@ Database planning:
 #### Back-End
 
 Server setup:
-[]run npm init --y
+[x]run npm init --y
 []make sure "start" script exists in package.json
-[]npm install express
-[]npm install body-parser
-[]npm install pg
-[]
-[]create server.js
-[]create todoRouter.js in routers folder in server folder
-[]create pool.js
+[x]npm install express
+[x]npm install body-parser
+[x]npm install pg
+[x]create server.js
+[x]create todoRouter.js in routers folder in server folder
+[x]create pool.js
 []wire up todoRouter.js export router
-[]wire up pool.js and link to DB and export pool
-[]write server code in server.js
+[x]wire up pool.js and link to DB and export pool
+[x]write server code in server.js
 
 # FEATURES
 
