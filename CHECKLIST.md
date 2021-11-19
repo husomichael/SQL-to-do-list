@@ -9,20 +9,20 @@
 
 Front end Initialization:
 [x]File folders
-[]Build boilerplate HTML
-[]Source style.css
-[]Source client.js
-[]Source jQuery.js
-[]Project structure
-[]Create database.sql
+[x]Build boilerplate HTML
+[x]Source style.css
+[x]Source client.js
+[x]Source jQuery.js
+[x]Project structure
+[x]Create database.sql
 [x].gitignore
 
 Database planning:
-[]Name database. 
-[]Name table/s. 
-[]Figure out structure of column names. 
-[]Write up SQL statements for building table. 
-[]Write up statements to put in some dummy data.
+[x]Name database. 
+[]xName table/s. 
+[x]Figure out structure of column names. 
+[x]Write up SQL statements for building table. 
+[x]Write up statements to put in some dummy data.
 
 #### Back-End
 
