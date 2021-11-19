@@ -25,6 +25,7 @@ function renderList(){
                     <td>${todo.importance}</td>
                     <td>${todo.task}</td>
                     <td>${todo.completed}</td>
+                    <td><button class="delete-button" id="${todo.id}">Delete</button></td>
                 </tr>
             `);
         }
