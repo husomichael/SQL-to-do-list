@@ -5,6 +5,7 @@ $(document).ready(readyNow);
 function readyNow(){
     console.log('jq');
     renderList();
+    $('#create-button').on('click', createTask);
 }
 
 //GET Route render todo list
@@ -29,12 +30,29 @@ function renderList(){
         }
     }).catch((error) =>{
         console.log('/todolist GET error:', error);
-    })
+    });
 }//END getList
 
 // DELETE route delete a task
 
 // POST route create a task
+function createTask(){
+    console.log('in createTask');
+    const taskToSend = {
+        task: $('#task-input').val()
+    };
+    $.ajax({
+        method:'POST',
+        url:'/todolist',
+        data: taskToSend
+    }).then((response) =>{
+        console.log('POST /todolist response:', response);
+        renderList();
+    }).catch((error) =>{
+        console.log('/todolist POST error:', error);
+    });
+    $('#task-input').val('');
+}
 
 // PUT route complete a task
 
