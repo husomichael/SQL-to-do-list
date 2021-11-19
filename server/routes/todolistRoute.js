@@ -15,6 +15,7 @@ router.get('/', (req, res) =>{
             console.error('/todolist GET route error:', dbError);
         });
 });
+
 //POST route to create task
 router.post('/', (req, res) =>{
     console.log('POST /todolist');
@@ -37,8 +38,26 @@ router.post('/', (req, res) =>{
         }).catch((dbError) =>{
             console.log('/todolist POST route error:', dbError);
         });
-})
+});
+
 //DELETE route
+router.delete('/:id', (req, res) =>{
+    console.log('req.params =', req.params);
+    const taskToDelete = req.params.id;
+    const sqlText = `
+        DELETE FROM "todo"
+        WHERE "id"=$1;
+    `;
+    const sqlValues = [
+        taskToDelete
+    ];
+    pool.query(sqlText, sqlValues)
+        .then((dbRes) =>{
+            res.sendStatus(200);
+        }).catch((dbError) =>{
+            res.sendStatus(500);
+        });
+});
 
 //PUT routes?
 

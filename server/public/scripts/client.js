@@ -6,9 +6,10 @@ function readyNow(){
     console.log('jq');
     renderList();
     $('#create-button').on('click', createTask);
+    $(document).on('click', '.delete-button', deleteTask);
 }
 
-//GET Route render todo list
+//GET /todolist route to render todolist
 function renderList(){
     console.log('in getList');
 
@@ -25,6 +26,7 @@ function renderList(){
                     <td>${todo.importance}</td>
                     <td>${todo.task}</td>
                     <td>${todo.completed}</td>
+                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
         }
@@ -33,9 +35,7 @@ function renderList(){
     });
 }//END getList
 
-// DELETE route delete a task
-
-// POST route create a task
+//POST /todolist route create a task
 function createTask(){
     console.log('in createTask');
     const taskToSend = {
@@ -52,8 +52,23 @@ function createTask(){
         console.log('/todolist POST error:', error);
     });
     $('#task-input').val('');
-}
+}//END createTask
 
-// PUT route complete a task
+//DELETE /todolist route to delete a task
+function deleteTask(){
+    const taskToDelete = $(this).data('id');
+    console.log('taskToDelete:', taskToDelete);
+    $.ajax({
+        method: 'DELETE',
+        url: `/todolist/${taskToDelete}`
+    }).then((response) =>{
+        console.log('deleteTask response:', response);
+        renderList();
+    }).catch((error) =>{
+        console.log('deleteTask error:', error);
+    });
+}//END deleteTask
+
+//PUT route complete a task
 
 //PUT route importance marker
