@@ -28,14 +28,14 @@ Database planning:
 
 Server setup:
 [x]run npm init --y
-[]make sure "start" script exists in package.json
+[x]make sure "start" script exists in package.json
 [x]npm install express
 [x]npm install body-parser
 [x]npm install pg
 [x]create server.js
 [x]create todoRouter.js in routers folder in server folder
 [x]create pool.js
-[]wire up todoRouter.js export router
+[x]wire up todoRouter.js export router
 [x]wire up pool.js and link to DB and export pool
 [x]write server code in server.js
 
