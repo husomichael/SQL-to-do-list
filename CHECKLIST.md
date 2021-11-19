@@ -1,12 +1,14 @@
-[]Think through table structure.
+[x]Think through table structure.
     -- Design on app.dbdesigner.net
     -- Actually make some CREATE TABLE statements.
+    Database: to-do-list
+    Table: todo
 [x]Make a branch for initializing stuff.
 
 #### Front-End
 
 Front end Initialization:
-[]File folders
+[x]File folders
 []Build boilerplate HTML
 []Source style.css
 []Source client.js
