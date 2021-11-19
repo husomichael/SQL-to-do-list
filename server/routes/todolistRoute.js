@@ -80,4 +80,25 @@ router.put('/:id', (req, res) =>{
         });
 });
 
+//PUT markImportant route
+router.put('/important/:id', (req, res) =>{
+    console.log('req.params =', req.params);
+    const taskToMark = req.params.id;
+    const sqlText = `
+    UPDATE "todo"
+    SET "importance"=$1
+    WHERE "id"=$2;
+    `;
+    const sqlValues = [
+        'True',
+        taskToMark
+    ];
+    pool.query(sqlText, sqlValues)
+        .then((dbRes) =>{
+            res.sendStatus(200);
+        }).catch((dbError) =>{
+            res.sendStatus(500);
+        });
+});
+
 module.exports = router;
