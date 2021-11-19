@@ -40,6 +40,7 @@ Server setup:
 [x]write server code in server.js
 
 # FEATURES
+[x]Render GET ROUTE
 
 []Create a task *POST ROUTE*
     store in db

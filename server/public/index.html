@@ -9,7 +9,20 @@
     <script src="scripts/client.js" charset="utf-8"></script>
     <title>Document</title>
 </head>
-<body>
+<>
     <h1>SQL To-Do List</h1>
+    <input type=text id="task-input" placeholder="Create a Task">
+    <button class="create-button" id="create-button">Create</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Importance</th>
+                <th>Task</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody id="view-todolist">
+        </tbody>
+    </table>
 </body>
 </html>
