@@ -100,4 +100,22 @@ function markImportant(){
     }).catch((error) =>{
         console.log('markComplete error:', error);
     });
+}//END markImportant
+
+//PUT /todolist route to edit task
+function editTask(){
+    console.log('in editTask');
+    const taskToEdit = $(this).data('id');
+    // const taskChanges = {
+    //     task:
+    // }
+    $.ajax({
+        method: 'PUT',
+        url: `/todolist/edit/${taskToEdit}`,
+        data: taskChanges
+    }).then((res) =>{
+        renderList();
+    }).catch((error) =>{
+        console.log('editTask error:', error);
+    });
 }
