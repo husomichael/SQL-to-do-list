@@ -101,26 +101,45 @@ router.put('/important/:id', (req, res) =>{
         });
 });
 
-//PUT editTask route
-router.put('/edit/:id', (req, res) =>{
-    console.log('req.params =', req.params);
-    const taskToEdit = req.params.id;
-    const taskChanges = req.body;
-    const sqlText = `
-        UPDATE "todo"
-        SET "task"=$1
-        WHERE "id"=$2;
-    `;
-    const sqlValues = [
-        taskChanges.task,
-        taskToEdit
-    ];
-    pool.query(sqlText, sqlValues)
-        .then((dbRes) =>{
-            res.sendStatus(200);
-        }).catch((dbError) =>{
-            res.sendStatus(500);
-        });
-});
+// //PUT editTaskSend route
+// router.put('/edit/:id', (req, res) =>{
+//     console.log('req.params =', req.params);
+//     const taskToEdit = req.params.id;
+//     const taskChanges = req.body.task;
+//     const sqlText = `
+//         UPDATE "todo"
+//         SET "task"=$1
+//         WHERE "id"=$2;
+//     `;
+//     const sqlValues = [
+//         taskChanges,
+//         taskToEdit
+//     ];
+//     pool.query(sqlText, sqlValues)
+//         .then((dbRes) =>{
+//             res.sendStatus(200);
+//         }).catch((dbError) =>{
+//             res.sendStatus(500);
+//         });
+// });
+
+// //GET route for edit task.
+// router.get('/editget/:id', (req, res) =>{
+//     console.log('req.params =', req.params);
+//     const taskToEdit = req.params.id;
+//     const sqlText = `
+//     SELECT * FROM "todo"
+//     WHERE "id"=$1;
+//     `;
+//     const sqlValues = [
+//         taskToEdit
+//     ];
+//     pool.query(sqlText, sqlValues)
+//         .then((dbRes) =>{
+//             res.send(dbRes.rows);
+//         }).catch((dbErr) =>{
+//             res.sendStatus(500);
+//         });
+// });
 
 module.exports = router;
