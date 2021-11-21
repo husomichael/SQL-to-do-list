@@ -1,3 +1,12 @@
 html{
-    background-color: rgb(211, 169, 0);
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+input{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }

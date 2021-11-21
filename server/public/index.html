@@ -11,19 +11,19 @@
     <title>Document</title>
 </head>
 <header>
-    <h1>SQL To-Do List</h1> 
+    <h1>To-Do List</h1> 
 </header> 
 <body>
     <div class="container mb-3 mt-3">
         <input type=text id="task-input" placeholder="Create a Task">
         <button class="create-button" id="create-button">Create</button>
-        <!-- <table class="table table-striped table-bordered mytasktable style="width: 100%"> -->
-        <table>
+        <table class="table table-striped table-bordered mytasktable style="width: 100%">
             <thead>
                 <tr>
+                    <th>Completed</th>
                     <th>Importance</th>
                     <th>Task</th>
-                    <th>Completed</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody id="view-todolist">

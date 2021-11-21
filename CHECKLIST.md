@@ -56,7 +56,7 @@ Server setup:
     CSS to differentiate "complete" tasks
     re-render DOM *GET ROUTE*
 
-[]task could have a mark important button
+[x]task could have a mark important button
     sort tasks in SQL query from DB to be importance first *PUT ROUTE*
     CSS to differentiate importance of tasks. (DEFCON level colors lol)
     re-render DOM *GET ROUTE*

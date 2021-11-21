@@ -9,14 +9,13 @@ function readyNow(){
     $(document).on('click', '.delete-button', deleteTask);
     $(document).on('click', '.complete-button', markComplete);
     $(document).on('click', '.important-button', markImportant);
-    $(document).on('click', '.edit-button', editTask);
+    // $(document).on('click', '.edit-button', editTask);
     // $(document).delegate('.edit-btn-primary', 'click', editTaskSend(taskToEditForSend));
 }
 
-//GET /todolist route to render todolist
+//GET /todolist route to render todolist 🔥 ✅
 function renderList(){
     console.log('in getList');
-
     $.ajax({
         method: 'GET',
         url: '/todolist'
@@ -25,23 +24,50 @@ function renderList(){
         $('#view-todolist').empty();
         console.log('GET /todolist response:', todoList);
         for(let todo of todoList){
-            $('#view-todolist').append(`
+            console.log(todo.importance);
+            console.log(todo.completed);
+            if(todo.importance === true && todo.completed === true){
+                $('#view-todolist').append(`
                 <tr>
-                    <td><button class="complete-button" data-id="${todo.id}">Complete</button></td>
-                    <td><button class="important-button" data-id="${todo.id}">Important</button></td>
-                    <td>${todo.importance}</td>
+                    <td>✅</td>
+                    <td>🔥</td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td>${todo.completed}</td>
                     <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
-                    <td><button type="button" class="edit-button" data-id="${todo.id}" data-bs-toggle="modal" data-bs-target="#edit-modal">Edit</button></td>
                 </tr>
             `);
+            }else if(todo.importance === true && todo.completed === false){
+                $('#view-todolist').append(`
+                <tr>
+                    <td><button class="complete-button" data-id="${todo.id}">Completed</button></td>
+                    <td>🔥</td>
+                    <td class="task-data" data-id="${todo.id}">${todo.task}</td>
+                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                </tr>
+            `);
+            }else if(todo.importance === false && todo.completed === true){
+                $('#view-todolist').append(`
+                <tr>
+                    <td>✅</td>
+                    <td><button class="important-button" data-id="${todo.id}">Mark Important</button></td>
+                    <td class="task-data" data-id="${todo.id}">${todo.task}</td>
+                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                </tr>
+            `);
+            }else{
+                $('#view-todolist').append(`
+                <tr>
+                    <td><button class="complete-button" data-id="${todo.id}">Completed</button></td>
+                    <td><button class="important-button" data-id="${todo.id}">Mark Important</button></td>
+                    <td class="task-data" data-id="${todo.id}">${todo.task}</td>
+                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                </tr>
+            `);
+            }
         }
     }).catch((error) =>{
         console.log('/todolist GET error:', error);
     });
 }//END getList
-
 //POST /todolist route create a task
 function createTask(){
     console.log('in createTask');
@@ -140,3 +166,4 @@ function markImportant(){
 //         console.log('editTask error:', error);
 //     });
 // }
+/* <td><button type="button" class="edit-button" data-id="${todo.id}" data-bs-toggle="modal" data-bs-target="#edit-modal">Edit</button></td> */

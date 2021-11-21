@@ -6,7 +6,9 @@ const pool = require('../modules/pool.js');
 
 //GET route
 router.get('/', (req, res) =>{
-    const sqlText = 'SELECT * FROM todo;';
+    const sqlText = `
+    SELECT * FROM "todo"
+    ORDER BY "importance" DESC;`;
     pool.query(sqlText)
         .then((dbRes) =>{
             const listFromDB = dbRes.rows;
