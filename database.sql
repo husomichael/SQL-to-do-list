@@ -7,5 +7,5 @@ CREATE TABLE todo (
 
 INSERT INTO todo ("importance", "task", "completed")
 VALUES 
-('False', 'Create a task POST ROUTE store in db rerender DOM GET ROUTE', 'False'),
-('False', 'Delete a task DELETE ROUTE remove task from DB rerender DOM GET ROUTE', 'False');
+('False', 'Wash the car.', 'False'),
+('False', 'Walk the dog.', 'False');
