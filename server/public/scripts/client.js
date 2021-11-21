@@ -29,37 +29,37 @@ function renderList(){
             if(todo.importance === true && todo.completed === true){
                 $('#view-todolist').append(`
                 <tr>
-                    <td>✅</td>
-                    <td>🔥</td>
+                    <td class="emoji">✅</td>
+                    <td class="emoji">🔥</td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }else if(todo.importance === true && todo.completed === false){
                 $('#view-todolist').append(`
                 <tr>
-                    <td><button class="complete-button" data-id="${todo.id}">Completed</button></td>
-                    <td>🔥</td>
+                    <td><button class="complete-button btn-success" data-id="${todo.id}">Completed</button></td>
+                    <td class="emoji">🔥</td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }else if(todo.importance === false && todo.completed === true){
                 $('#view-todolist').append(`
                 <tr>
-                    <td>✅</td>
-                    <td><button class="important-button" data-id="${todo.id}">Mark Important</button></td>
+                    <td class="emoji">✅</td>
+                    <td><button class="important-button btn-warning" data-id="${todo.id}">Mark Important</button></td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }else{
                 $('#view-todolist').append(`
                 <tr>
-                    <td><button class="complete-button" data-id="${todo.id}">Completed</button></td>
-                    <td><button class="important-button" data-id="${todo.id}">Mark Important</button></td>
+                    <td><button class="complete-button btn-success" data-id="${todo.id}">Completed</button></td>
+                    <td><button class="important-button btn-warning" data-id="${todo.id}">Mark Important</button></td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }
@@ -68,6 +68,7 @@ function renderList(){
         console.log('/todolist GET error:', error);
     });
 }//END getList
+
 //POST /todolist route create a task
 function createTask(){
     console.log('in createTask');
@@ -147,7 +148,7 @@ function markImportant(){
 //     }).catch((error) =>{
 //         console.log('editTaskSend error:', error);
 //     });
-// }
+// }//END editTaskSend
 
 // //Function to fill modal input with current task to edit.
 // function editTask(){
@@ -165,5 +166,5 @@ function markImportant(){
 //     }).catch((error) =>{
 //         console.log('editTask error:', error);
 //     });
-// }
+// }//END editTask
 /* <td><button type="button" class="edit-button" data-id="${todo.id}" data-bs-toggle="modal" data-bs-target="#edit-modal">Edit</button></td> */

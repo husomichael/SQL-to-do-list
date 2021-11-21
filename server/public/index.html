@@ -11,19 +11,25 @@
     <title>Document</title>
 </head>
 <header>
+  <div class="containter mb-3 mt-3" id="header-container">
     <h1>To-Do List</h1> 
+  </div>
 </header> 
 <body>
     <div class="container mb-3 mt-3">
-        <input type=text id="task-input" placeholder="Create a Task">
-        <button class="create-button" id="create-button">Create</button>
-        <table class="table table-striped table-bordered mytasktable style="width: 100%">
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+        </div>
+        <input type="text" class="form-control" id="task-input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Create a Task">
+        <button class="create-button btn-primary" id="create-button">Create</button>
+      </div>
+        <table class="table table-striped table-dark mytasktable style="width: 100%">
             <thead>
                 <tr>
-                    <th>Completed</th>
-                    <th>Importance</th>
+                    <th class="center-th">Completed</th>
+                    <th class="center-th">Importance</th>
                     <th>Task</th>
-                    <th>Delete</th>
+                    <th class="center-th">Delete</th>
                 </tr>
             </thead>
             <tbody id="view-todolist">
