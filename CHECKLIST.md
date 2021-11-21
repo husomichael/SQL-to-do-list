@@ -61,4 +61,6 @@ Server setup:
     CSS to differentiate importance of tasks. (DEFCON level colors lol)
     re-render DOM *GET ROUTE*
 
-[] CSS! Make it pretty. 
+[x] CSS! Make it pretty. 
+
+[]Figure out tying click handler to button in modal. Routes set up. Global variable taskToEditForSend used to target correct row in editTaskSend() function. Edit button to call modal needs to be in all 4 conditionals of renderList() function. Edit button click handler will call editTask() function. Modal submit button will call editTaskSend() function.

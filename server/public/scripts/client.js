@@ -68,6 +68,7 @@ function renderList(){
         console.log('/todolist GET error:', error);
     });
 }//END getList
+
 //POST /todolist route create a task
 function createTask(){
     console.log('in createTask');
@@ -147,7 +148,7 @@ function markImportant(){
 //     }).catch((error) =>{
 //         console.log('editTaskSend error:', error);
 //     });
-// }
+// }//END editTaskSend
 
 // //Function to fill modal input with current task to edit.
 // function editTask(){
@@ -165,5 +166,5 @@ function markImportant(){
 //     }).catch((error) =>{
 //         console.log('editTask error:', error);
 //     });
-// }
+// }//END editTask
 /* <td><button type="button" class="edit-button" data-id="${todo.id}" data-bs-toggle="modal" data-bs-target="#edit-modal">Edit</button></td> */
