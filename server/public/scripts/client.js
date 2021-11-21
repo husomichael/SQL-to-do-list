@@ -29,37 +29,37 @@ function renderList(){
             if(todo.importance === true && todo.completed === true){
                 $('#view-todolist').append(`
                 <tr>
-                    <td>✅</td>
-                    <td>🔥</td>
+                    <td class="emoji">✅</td>
+                    <td class="emoji">🔥</td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }else if(todo.importance === true && todo.completed === false){
                 $('#view-todolist').append(`
                 <tr>
-                    <td><button class="complete-button" data-id="${todo.id}">Completed</button></td>
-                    <td>🔥</td>
+                    <td><button class="complete-button btn-success" data-id="${todo.id}">Completed</button></td>
+                    <td class="emoji">🔥</td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }else if(todo.importance === false && todo.completed === true){
                 $('#view-todolist').append(`
                 <tr>
-                    <td>✅</td>
-                    <td><button class="important-button" data-id="${todo.id}">Mark Important</button></td>
+                    <td class="emoji">✅</td>
+                    <td><button class="important-button btn-warning" data-id="${todo.id}">Mark Important</button></td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }else{
                 $('#view-todolist').append(`
                 <tr>
-                    <td><button class="complete-button" data-id="${todo.id}">Completed</button></td>
-                    <td><button class="important-button" data-id="${todo.id}">Mark Important</button></td>
+                    <td><button class="complete-button btn-success" data-id="${todo.id}">Completed</button></td>
+                    <td><button class="important-button btn-warning" data-id="${todo.id}">Mark Important</button></td>
                     <td class="task-data" data-id="${todo.id}">${todo.task}</td>
-                    <td><button class="delete-button" data-id="${todo.id}">Delete</button></td>
+                    <td><button class="delete-button btn-danger" data-id="${todo.id}">Delete</button></td>
                 </tr>
             `);
             }

@@ -1,12 +1,43 @@
 html{
     font-family: 'Roboto', sans-serif;
+    /*
+    #334257 #476072 #548CA8 #EEEEEE
+    */
+    background-color: #EEEEEE;
+}
+body{
+    background-color: #EEEEEE;
 }
 header{
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 70px;
 }
 input{
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+table button{
+    display: block;
+    margin: auto;
+}
+.emoji{
+    text-align: center;
+}
+.center-th{
+    text-align: center;
+}
+thead{
+    margin-top: 20px;
+}
+table{
+    margin-top: 30px;
+}
+#header-container{
+    background-color: #548CA8;
+    width: 63.3%;
+    display: block;
+    margin: auto;
+    color: #2C3034;
 }
